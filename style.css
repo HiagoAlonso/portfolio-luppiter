@@ -27,12 +27,17 @@ body{
 }
 
 header{
+    z-index: 10;
+    position: fixed;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
     height: 80px;
     background-image: linear-gradient(45deg, black, var(--cor2), var(--cor1));
     font-family: 'Times New Roman', Times, serif;
+    border-bottom: 0.1px solid rgb(48, 48, 48);
+    box-shadow: 0px 0px 8px black;
 }
 
 header > img{
@@ -46,6 +51,7 @@ nav > a{
     text-transform: uppercase;
     text-shadow: 0px 0px 3px black;
     margin: 10px;
+    letter-spacing: 0.2em;
 }
 
 nav > a:hover{
@@ -56,17 +62,53 @@ nav > a:hover{
 
 main{
     background: rgba(0, 0, 0, 0.308) url(images/lagos_e_pedras_2.jpg) center center/cover fixed;
-    border-top: 0.1px solid rgb(48, 48, 48);
-    border-bottom: 0.1px solid rgb(48, 48, 48);
-    box-shadow: inset 0px 0px 8px black;
 }
 
-#section-inicio {
+span{
+    color: var(--cor3);
+}
+
+h1{
+    font-family: var(--font1);
+    font-size: 3em;
+    font-weight: 400;
+    color: var(--cor4);
+}
+
+h2{
+    font-family: var(--font1);
+    color: lightgray;
+    font-weight: 200;
+    font-size: 1.3em;
+}
+
+.button {
+    text-decoration: none;
+    color: var(--cor3);
+    border: 1px solid var(--cor5);
+    border-radius: 300px;
+    padding: 5px 10px;
+    font-family: var(--font1);
+    font-size: 0.8em;
+}
+
+.button i{
+    padding-right: 10px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+#section-home {
     display: flex;
     justify-content: left;
     align-items: center;
-    gap: 40px;
-    padding: 60px 30px;
+    gap: 50px;
+    height: 100vh;
+    margin-left: 5vw;
 }
 
 .home-content {
@@ -74,19 +116,6 @@ main{
     flex-direction: column;
     gap: 15px;
     color: white;
-}
-
-.home-content > h1{
-    font-family: var(--font1);
-    font-size: 3em;
-    font-weight: 400;
-}
-
-.home-content > h2{
-    font-family: var(--font1);
-    color: lightgray;
-    font-weight: 200;
-    font-size: 1.3em;
 }
 
 .home-content > a{
@@ -110,12 +139,97 @@ main{
 .home-content img {
     border-radius: 300px;
     width: 250px;
-    margin-left: 5vw;
     box-shadow: inset 0 0 10px black;
 }
 
-.section-main {
-    padding: 15px;
+
+
+#section-about {
+    background: url("images/IMG-20210825-WA0031.jpg") bottom center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#section-about::after {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.main-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 10px;
+}
+
+.main-title::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    border-radius: 40px;
+    background-color: var(--cor3);
+    transform: translateY(2em);
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-text, .main-title {
+    z-index: 1;
+}
+
+.main-text h2 {
+    padding: 20px;
+    text-align: center;
+}
+
+.main-text p {
+    text-align: center;
+    color: whitesmoke;
+    font-family: var(--font1);
+    letter-spacing: 0.12em;
+    line-height: 1.4em;
+    margin-bottom: 15px;
+}
+
+.main-text a:hover, .main-text i:hover {
+    text-shadow: 0 0 2px var(--cor3);
+    box-shadow: 0 0 2px var(--cor3);
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: .4s;
+}
+
+.main-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor3);
+    z-index: 1;
+}
+
+
+
+
+
+
+#section-gallery {
+    padding: 50px;
 }
 
 .main-cards {
@@ -130,7 +244,7 @@ main{
 .main-cards img {
     height: 200px;
     width: 200px;
-    border: 1px solid rgb(88, 88, 88);
+    border: 1px solid rgb(15, 15, 15);
     box-shadow: 0 0 7px black;
 }
 
@@ -143,6 +257,8 @@ footer{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     text-shadow: 0px 0px 7px black;
+    border-top: 0.1px solid rgb(48, 48, 48);
+    box-shadow: 0px 0px 8px black;
 }
 
 footer > #footer-title{
