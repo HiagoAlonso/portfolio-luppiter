@@ -60,8 +60,8 @@ nav > a:hover{
     text-shadow: 0px 0px 5px var(--cor3);
 }
 
-main{
-    background: rgba(0, 0, 0, 0.308) url(images/lagos_e_pedras_2.jpg) center center/cover fixed;
+.fa-bars {
+    display: none;
 }
 
 span{
@@ -137,6 +137,10 @@ button {
     background-color: white;
 }
 
+.home-content > a > i{
+    padding-right: 5px;
+}
+
 .home-content img {
     border-radius: 300px;
     width: 250px;
@@ -169,7 +173,6 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 
 .main-title{
@@ -253,7 +256,6 @@ button {
     box-shadow: 0 0 7px black;
 }
 
-
 .card {
     overflow: hidden; 
     height: 200px;
@@ -261,11 +263,34 @@ button {
     transition: .4s;
 }
 
+.card p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    font-family: var(--font1);
+    font-weight: bold;
+    font-size: .8em;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(-25px);
+}
+
 .main-cards img:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 
+.main-cards img:hover ~ p, .main-cards p:hover{
+    transform: translateY(-50px);
+    padding: 7px;
+    opacity: 1;
+    transition: .6s ease;
+}
 
 
 
@@ -283,4 +308,59 @@ footer > #footer-title{
     color: var(--cor4);
     font-family: var(--font1);
     font-size: 2.5em;
+}
+
+
+@media (max-width: 700px) {
+
+
+
+    /* header img {
+        height: 8vh;
+    }
+    
+    header nav{
+        position: absolute;
+        top: 90px;
+        padding: 15px;
+        background-color: #181818;
+        border: 1px solid black;
+    }
+
+    .fa-bars {
+        color: var(--cor3);
+        position: absolute;
+        left: 40px;
+    } */
+
+
+
+    #section-home {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .home-content {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+
+    #section-about, #section-about::after {
+        height: 160vh;
+    }
+
+    .main-content, .main-arrows {
+        flex-direction: column;
+    }
+
+    .main-text {
+        padding-bottom: 75px;
+    }
+
+    .fa-chevron-down {
+        margin: -3px;
+    }
 }
